@@ -3,8 +3,6 @@ import { z } from 'astro:schema';
 
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_TOKEN);
-
 export const server = {
   send: defineAction({
     accept: 'form',
@@ -23,6 +21,7 @@ export const server = {
       privacy: z.string().transform((val) => val === 'on'),
     }),
     handler: async (input) => {
+      const resend = new Resend(import.meta.env.RESEND_API_TOKEN);
       const html = `<table>
         <tr>
           <td>名前</td>
