@@ -1,6 +1,6 @@
 import { ActionError, defineAction } from 'astro:actions';
 import { z } from 'astro:schema';
-
+import { RESEND_API_TOKEN } from 'astro:env/server';
 import { Resend } from 'resend';
 
 export const server = {
@@ -21,7 +21,7 @@ export const server = {
       privacy: z.string().transform((val) => val === 'on'),
     }),
     handler: async (input) => {
-      const resend = new Resend(import.meta.env.RESEND_API_TOKEN);
+      const resend = new Resend(RESEND_API_TOKEN);
       const html = `<table>
         <tr>
           <td>名前</td>

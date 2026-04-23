@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
@@ -11,4 +11,12 @@ export default defineConfig({
   site,
   adapter: cloudflare(),
   integrations: [sitemap(), react()],
+  env: {
+    schema: {
+      RESEND_API_TOKEN: envField.string({
+        context: 'server',
+        access: 'secret',
+      }),
+    },
+  },
 });
