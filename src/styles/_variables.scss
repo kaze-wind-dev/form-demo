@@ -2,15 +2,18 @@
 @use 'functions' as *;
 
 :root {
-  --primary-color: #0053a6;
-  --secondary-color: #1976d2;
-  --bg-color: #f5faff;
-  --black-color: #111;
-  --white-color: #fff;
-  --dark-gray-color: #3e4045;
-  --gray-color: #6b6e73;
-  --light-gray-color: #ebebeb;
-  --border-color: #d9d9d9;
+  --color-primary: #0053a6;
+  --color-background: #f5faff;
+  --color-black: #111;
+  --color-white: #fff;
+  --color-dark-gray: #3e4045;
+  --color-gray: #6b6e73;
+  --color-light-gray: #ebebeb;
+  --color-border: #d9d9d9;
+  --color-required: #f00;
+  --color-success: #008000;
+  --color-error: #f00;
+  --color-link: #007bff;
   --font-size-xs: #{calcClamp(11, 12, 375, 1024)};
   --font-size-sm: #{calcClamp(13, 14, 375, 1024)};
   --font-size-base: #{calcClamp(14, 15, 375, 1024)};
@@ -46,6 +49,7 @@
   --focus-outline-offset: 2px;
   --focus-outline-width: 2px;
   --focus-outline-style: solid;
+  --transition-duration-base: 0.3s;
 
   @include mq('lg') {
     --font-size-xs: #{rem(13)};

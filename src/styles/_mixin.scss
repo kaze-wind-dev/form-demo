@@ -36,3 +36,10 @@ $breakpoints: (
     }
   }
 }
+
+// focusを適用するmixin
+@mixin focus() {
+  &:focus-visible {
+    @content;
+  }
+}
