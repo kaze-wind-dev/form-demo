@@ -3,7 +3,7 @@ import { z } from 'astro:schema';
 
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.PREVIEW_RESEND_API_TOKEN);
+const resend = new Resend(import.meta.env.RESEND_API_TOKEN);
 
 export const server = {
   send: defineAction({
