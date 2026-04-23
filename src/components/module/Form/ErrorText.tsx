@@ -7,8 +7,14 @@ interface ErrorTextProps {
 
 export default function ErrorText({ id, message }: ErrorTextProps) {
   return (
-    <p className={styles.errorText} role="alert" aria-live="polite" id={id}>
-      {message}
-    </p>
+    <div
+      className={styles.errorText}
+      role="alert"
+      aria-atomic="true"
+      aria-live="assertive"
+      id={id}
+    >
+      <span>{message}</span>
+    </div>
   );
 }

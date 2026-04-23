@@ -49,13 +49,10 @@ export default function FormContainer() {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (status === 'confirm' && confirmMessageRef.current) {
-      if (!confirmMessageRef.current) return;
       confirmMessageRef.current.focus();
-    } else if (status === 'success') {
-      if (!successMessageRef.current) return;
+    } else if (status === 'success' && successMessageRef.current) {
       successMessageRef.current.focus();
-    } else if (status === 'error') {
-      if (!errorMessageRef.current) return;
+    } else if (status === 'error' && errorMessageRef.current) {
       errorMessageRef.current.focus();
     }
   }, [status]);

@@ -1,7 +1,25 @@
 import ErrorText from '@/components/module/Form/ErrorText';
 import styles from './FormPrivacy.module.scss';
+import type { UseFormRegister, FieldErrors } from 'react-hook-form';
 
-export const FormPrivacy = ({ register, errors }: { register: any; errors: any }) => {
+interface FormValues {
+  name: string;
+  email: string;
+  address: string;
+  tel: string;
+  topic: string;
+  select: string;
+  message: string;
+  privacy: boolean;
+}
+
+export const FormPrivacy = ({
+  register,
+  errors,
+}: {
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+}) => {
   return (
     <div className={styles.container}>
       <p className={styles.lead}>
@@ -24,7 +42,10 @@ export const FormPrivacy = ({ register, errors }: { register: any; errors: any }
         <span className={styles.required}>必須</span>
       </div>
       {errors.privacy && (
-        <ErrorText id="privacy-error" message="プライバシーポリシーに同意してください" />
+        <ErrorText
+          id="privacy-error"
+          message="プライバシーポリシーに同意してください"
+        />
       )}
     </div>
   );
