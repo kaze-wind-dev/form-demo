@@ -9,7 +9,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
-    "baseUrl": ".",
+    "jsx": "react-jsx",
     "paths": { "@/*": ["./src/*"] }
   },
   "include": [".astro/types.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"],
