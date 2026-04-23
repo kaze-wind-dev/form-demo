@@ -1,0 +1,25 @@
+---
+type Props = {
+  class?: string;
+};
+const { class: className, ...props } = Astro.props;
+---
+
+<div class:list={['play-ground', className ?? '']} {...props}>
+  <slot />
+</div>
+
+<style lang="scss">
+  @use '@/styles/variables' as *;
+  @use '@/styles/functions' as *;
+  @use '@/styles/mixin' as *;
+
+  .play-ground {
+    padding: var(--spacing-5xl) var(--inner-inline-padding);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    min-height: 80dvh;
+    background-color: var(--color-light-gray);
+    border-radius: rem(4);
+  }
+</style>

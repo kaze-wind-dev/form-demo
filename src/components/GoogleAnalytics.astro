@@ -1,0 +1,19 @@
+---
+
+---
+
+<!-- Google tag (gtag.js) -->
+<script
+  type="text/partytown"
+  async
+  src=`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.GA_I}`
+  is:inline></script>
+<script type="text/partytown" is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    // eslint-disable-next-line
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', `${import.meta.env.GA_I}`);
+</script>

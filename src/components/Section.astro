@@ -1,0 +1,22 @@
+---
+type Props = {
+  class?: string;
+};
+const { class: className, ...props } = Astro.props;
+---
+
+<section class:list={['section', className ?? '']} {...props}>
+  <slot />
+</section>
+
+<style lang="scss">
+  @use '@/styles/variables' as *;
+  @use '@/styles/functions' as *;
+  @use '@/styles/mixin' as *;
+
+  .section {
+    &:not(:last-child) {
+      margin-block-end: var(--spacing-8xl);
+    }
+  }
+</style>

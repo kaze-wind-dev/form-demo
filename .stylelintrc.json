@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-html/astro"],
+  "rules": {
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "custom-property-pattern": "^(?:[a-z0-9-]+|_[a-z0-9-]+)$"
+  }
+}

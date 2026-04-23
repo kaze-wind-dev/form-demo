@@ -1,0 +1,24 @@
+---
+type Props = {
+  class?: string;
+};
+const { class: className, ...props } = Astro.props;
+---
+
+<div class:list={['text', className ?? '']} {...props}>
+  <slot />
+</div>
+
+<style lang="scss">
+  @use '@/styles/variables' as *;
+  @use '@/styles/functions' as *;
+  @use '@/styles/mixin' as *;
+
+  .text {
+    font-size: var(--font-size-base);
+    display: grid;
+    gap: 1em;
+    line-height: 1.75;
+    margin-block: var(--spacing-xl);
+  }
+</style>

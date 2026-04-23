@@ -1,0 +1,23 @@
+---
+type Props = {
+  title: string;
+  class?: string;
+};
+const { title, class: className, ...props } = Astro.props;
+---
+
+<h1 class:list={['page-title', className ?? '']} {...props}>{title}</h1>
+
+<style lang="scss">
+  @use '@/styles/variables' as *;
+  @use '@/styles/functions' as *;
+  @use '@/styles/mixin' as *;
+
+  .page-title {
+    font-size: var(--heading-1);
+    font-weight: 700;
+    margin-block-end: var(--spacing-5xl);
+    padding-inline-start: 0.5em;
+    border-left: 4px solid var(--primary-color);
+  }
+</style>

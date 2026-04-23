@@ -1,0 +1,21 @@
+---
+type Props = {
+  title: string;
+  class?: string;
+};
+const { title, class: className, ...props } = Astro.props;
+---
+
+<h3 class:list={['heading3', className ?? '']} {...props}>{title}</h3>
+
+<style lang="scss">
+  @use '@/styles/variables' as *;
+  @use '@/styles/functions' as *;
+  @use '@/styles/mixin' as *;
+
+  .heading3 {
+    font-size: var(--heading-3);
+    font-weight: 700;
+    margin-block-end: var(--spacing-2xl);
+  }
+</style>

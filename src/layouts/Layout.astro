@@ -1,0 +1,26 @@
+---
+type Props = {
+  pageTitle: string;
+};
+const { pageTitle } = Astro.props;
+import Head from './Head.astro';
+import '@/styles/global.scss';
+import 'kiso.css';
+---
+
+<html lang="ja">
+  <Head pageTitle={pageTitle} />
+
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  main {
+    padding-block: var(--spacing-8xl);
+    padding-inline: var(--_main-inline-padding, var(--inner-inline-padding));
+  }
+</style>
