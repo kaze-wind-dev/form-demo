@@ -1,0 +1,10 @@
+@use '@/styles/mixin' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/variables' as *;
+
+.formWrapper {
+  width: 90%;
+  max-width: 960px;
+  padding-block: rem(100);
+  margin-inline: auto;
+}

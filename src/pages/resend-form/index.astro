@@ -1,0 +1,27 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Form from '@/components/module/Form/Form.tsx';
+import FormContainer from '@/components/module/Form/FormContainer.tsx';
+---
+
+<Layout pageTitle="Resend Form">
+  <h1 class="heading">お問い合わせ</h1>
+  <Form>
+    <FormContainer client:load />
+  </Form>
+</Layout>
+
+<style lang="scss">
+  @use '@/styles/mixin' as *;
+  @use '@/styles/functions' as *;
+  @use '@/styles/variables' as *;
+
+  .heading {
+    padding: rem(60) 0;
+    margin-block-end: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    border-block-end: 1px solid #eee;
+  }
+</style>

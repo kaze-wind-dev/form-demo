@@ -1,0 +1,29 @@
+@use '@/styles/mixin' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/variables' as *;
+
+.stepper {
+  display: flex;
+  gap: rem(10);
+  align-items: center;
+  margin-block-end: rem(40);
+}
+
+.stepperNumber {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.stepperItem {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: rem(10);
+}
+
+.stepperItemCurrent {
+  border-bottom-color: var(--color-black);
+}

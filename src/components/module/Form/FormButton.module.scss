@@ -1,0 +1,27 @@
+@use '@/styles/mixin' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/variables' as *;
+
+.formButton {
+  width: 300px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--color-black);
+  border: none;
+  border-radius: 0.5rem;
+  transition: background-color var(--transition-duration-base) ease;
+
+  @include hover {
+    background-color: var(--color-primary);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: #eee;
+  }
+}

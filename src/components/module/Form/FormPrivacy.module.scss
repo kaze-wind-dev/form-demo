@@ -1,0 +1,69 @@
+@use '@/styles/mixin' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/variables' as *;
+
+.container {
+  display: grid;
+  margin-block-start: rem(48);
+  text-align: center;
+}
+
+.required {
+  padding-inline: rem(5);
+  margin-inline-start: rem(10);
+  font-size: 0.875rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  border: 1px solid var(--color-black);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.linkLabel {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.checkbox {
+  position: relative;
+  width: rem(16);
+  aspect-ratio: 1 / 1;
+  margin-inline-end: rem(8);
+  appearance: none;
+  cursor: pointer;
+
+  &:checked {
+    &::before {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: rem(12);
+      height: rem(6);
+      margin: auto;
+      content: '';
+      border-block-end: 2px solid var(--color-black);
+      border-inline-start: 2px solid var(--color-black);
+      rotate: -45deg;
+      translate: 0 -25%;
+    }
+  }
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: rem(20);
+}
+
+.lead {
+  text-align: center;
+}
