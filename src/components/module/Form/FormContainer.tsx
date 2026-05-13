@@ -109,6 +109,7 @@ export default function FormContainer() {
                     type="text"
                     id="name"
                     aria-describedby="name-error"
+                    aria-invalid={errors.name ? 'true' : 'false'}
                     className={errors.name ? styles.hasError : ''}
                   />
                   {errors.name && (
@@ -136,6 +137,7 @@ export default function FormContainer() {
                     type="email"
                     id="email"
                     aria-describedby="email-error"
+                    aria-invalid={errors.email ? 'true' : 'false'}
                     className={errors.email ? styles.hasError : ''}
                   />
                   {errors.email && (
@@ -169,6 +171,7 @@ export default function FormContainer() {
                     type="tel"
                     id="tel"
                     aria-describedby="tel-error"
+                    aria-invalid={errors.tel ? 'true' : 'false'}
                   />
                   {errors.tel && (
                     <ErrorText
